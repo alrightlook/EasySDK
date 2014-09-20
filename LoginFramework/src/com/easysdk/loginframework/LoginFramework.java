@@ -6,11 +6,7 @@ import android.widget.Toast;
 import com.example.loginlib.LoginLib;
 
 public class LoginFramework extends LoginLib{
-	@Override
-	public void Init(Activity ctx)
-	{
-		super.Init(ctx);
-	}
+	
 	@Override
 	public void doLogin()
 	{

@@ -18,7 +18,7 @@ public class LoginSample extends Activity {
 	    super.onCreate(savedInstanceState);
 	    setContentView(R.layout.mainlayout);
 	    
-	    LoginLib.newInstance("com.easysdk.loginframework.LoginFramework");
+	    LoginLib.newInstance(this);
 	    LoginLib.Instance().Init(this);
 	    
 	    mDoLoginBtn = (Button)findViewById(R.id.button1);

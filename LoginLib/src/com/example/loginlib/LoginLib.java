@@ -6,6 +6,8 @@ import java.lang.reflect.InvocationTargetException;
 import android.app.Activity;
 import android.content.Context;
 
+import com.example.loginutils.CommonUtils;
+
 public abstract class LoginLib {
 	protected LoginLib() {}
 	private static LoginLib m_Instance;
@@ -21,9 +23,10 @@ public abstract class LoginLib {
 		return m_Activity;
 	}
 	
-	public static void newInstance(String libName)
+	public static void newInstance(Context ctx)
 	{
 		try {
+			String libName = CommonUtils.getLibClassName(ctx);
 			Constructor<?> c = Class.forName(libName).getDeclaredConstructor();
 			c.setAccessible(true);
 			Object obj = c.newInstance();
