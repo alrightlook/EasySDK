@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 
+import com.easysdk.loginframework.LoginFramework;
 import com.example.loginlib.LoginLib;
 
 public class LoginSample extends Activity {
@@ -16,14 +17,18 @@ public class LoginSample extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
 	    super.onCreate(savedInstanceState);
 	    setContentView(R.layout.mainlayout);
+	    
+	    LoginLib.newInstance("com.easysdk.loginframework.LoginFramework");
 	    LoginLib.Instance().Init(this);
+	    
 	    mDoLoginBtn = (Button)findViewById(R.id.button1);
 	    mDoLoginBtn.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				LoginLib.Instance().doLogin();
+				
+				((LoginFramework)LoginLib.Instance()).doLogin();
 				
 			}
 	    	
