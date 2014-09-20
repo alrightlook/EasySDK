@@ -19,7 +19,7 @@
             </intent-filter>
         </activity>
         
-        <activity android:name="com.example.loginlib.LoginActivity"></activity>
+        <activity android:name="com.easysdk.loginofficial.LoginActivity"></activity>
     </application>
 
 </manifest>
